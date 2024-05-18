@@ -1,5 +1,4 @@
 class NewArray {
-
     constructor() {
         this.data = {};
         this.length = 0;
