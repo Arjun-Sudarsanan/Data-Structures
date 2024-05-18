@@ -29,12 +29,10 @@ class NewArray {
         for (let i = index; i < this.length; i++) {
             this.data[i] = this.data[i + 1];
         }
-        delete this.data[this.length -1];
+        delete this.data[this.length - 1];
         this.length--;
         return this.data[this.length];
-
     }
-
 }
 
 const myNewArray = new NewArray();
@@ -43,14 +41,12 @@ myNewArray.pushItem('My');
 myNewArray.pushItem('Name');
 myNewArray.pushItem('Is');
 myNewArray.pushItem('Arjun');
-console.log('....', myNewArray.getArrayItems());
+console.log('Array after insertion...', myNewArray.getArrayItems());
 
-console.log('....', myNewArray.getItemAt(2));
+console.log('Element at position...', myNewArray.getItemAt(2));
 
 myNewArray.popItem();
-console.log('....', myNewArray.getArrayItems());
+console.log('Array after popping...', myNewArray.getArrayItems());
 
 myNewArray.deleteItemAt(2);
-console.log('....', myNewArray.getArrayItems());
-
-
+console.log('Array after deletion...', myNewArray.getArrayItems());
