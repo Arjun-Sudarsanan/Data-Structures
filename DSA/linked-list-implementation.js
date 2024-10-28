@@ -30,6 +30,7 @@ class LinkedList {
     }
 
     addAtPos(pos, newValue) {
+        //Switch statements would be more readable
         if (pos < 0 || pos > this.length) {
             console.warn("Not a valid index");
         }
@@ -62,12 +63,15 @@ class LinkedList {
         if (position === 0) {
             this.head = this.head.next;
         }
-        else if (position === this.length) {
-
-        }
         else {
             const leader = this.findElement(position - 1);
-            leader.next = leader.next.next;
+            if (position === this.length) {
+                leader.next = null;
+            }
+            else {
+                leader.next = leader.next.next;
+            }
+
         }
         this.length--;
     }
