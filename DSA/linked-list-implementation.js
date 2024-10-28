@@ -18,7 +18,7 @@ class LinkedList {
         this.length++;
         return this.head;
     }
-    
+
     prepend(newValue) {
         const tempReference = this.head;
         this.head = {
@@ -56,6 +56,20 @@ class LinkedList {
             ele = ele.next;
         }
         return ele;
+    }
+
+    deleteElement(position) {
+        if (position === 0) {
+            this.head = this.head.next;
+        }
+        else if (position === this.length) {
+
+        }
+        else {
+            const leader = this.findElement(position - 1);
+            leader.next = leader.next.next;
+        }
+        this.length--;
     }
 }
 
